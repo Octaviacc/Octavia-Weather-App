@@ -26,6 +26,10 @@ body {
   padding: 20px;
   font-size: 16px;
 }
+
+::-webkit-input-placeholder {
+  color: white;
+}
 .search-button {
   background-color: rgb(29, 32, 49);
   padding: 20px;

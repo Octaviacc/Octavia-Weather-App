@@ -63,14 +63,14 @@ main {
   font-size: 88px;
   margin-left: 10px;
   font-weight: bold;
+  line-height: 88px;
 }
 .weather-icon {
-  font-size: 40px;
-  margin-top: 22px;
-  margin-left: 10px;
+  width: 88px;
+  height: 88px;
 }
 .weather-unit {
-  margin-top: 16px;
+  margin-top: 6px;
   font-size: 28px;
 }
 footer {

@@ -55,3 +55,30 @@ let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchEngine);
 
 searchCity("Philadelphia");
+
+function displayForcast() {
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tues"];
+
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+  <div class="forecast-days">
+    <div class="forecast-day">${day}</div>
+    <div class="forecast-day-icon">🌥️</div>
+    <div class="forecast-day-temp">
+      <div class="forecast-day-temperatures">
+        <strong>92°</strong>
+      </div>
+      <div class="forecast-day-temperatures">70°</div>
+    </div>
+  </div>
+  `;
+  });
+  let forecastElement = document.querySelector("#forecasts");
+  forecastElement.innerHTML = forecastHtml;
+}
+
+displayForcast();

@@ -16,6 +16,8 @@ function refreshWeather(response) {
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(temperature);
   speedElement.innerHTML = `${response.data.wind.speed} mph`;
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -54,11 +56,18 @@ function searchEngine(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchEngine);
 
-searchCity("Philadelphia");
+function getForecast(city) {
+  let apiKey = "b186a53540a66b93c63e67af40o0ct1c";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
+  axios(apiUrl).then(displayForecast);
 
-function displayForcast() {
+  console.log(apiUrl);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+
   let days = ["Fri", "Sat", "Sun", "Mon", "Tues"];
-
   let forecastHtml = "";
 
   days.forEach(function (day) {
@@ -80,5 +89,4 @@ function displayForcast() {
   let forecastElement = document.querySelector("#forecasts");
   forecastElement.innerHTML = forecastHtml;
 }
-
-displayForcast();
+searchCity("Miami");

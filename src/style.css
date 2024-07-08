@@ -96,9 +96,10 @@ footer {
   line-height: 20px;
 }
 .forecast-day-icon {
-  text-align: center;
-  font-size: 38px;
-  margin-bottom: 10px;
+  display: block;
+  margin: 0 auto;
+  width: 68px;
+  height: 68px;
 }
 .forecast-day-temp {
   text-align: center;
